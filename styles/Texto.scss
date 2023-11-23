@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+$primary-color: #e9a237;
+$secondary-color: #000000;
+
+div {
+  text-align: center;
+
+  h2 {
+    color: $primary-color;
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: 200px;
+    font-family: 'Kanit', sans-serif;
+  }
+
+  h3 {
+    color: $secondary-color;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family: 'Kanit', sans-serif;
+  }
+
+  h4 {
+    color: #333;
+    font-size: 20px;
+    font-family: 'Kanit', sans-serif;
+  }
+}

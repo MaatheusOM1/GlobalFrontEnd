@@ -4,7 +4,7 @@ import '../styles/Header.scss';
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className='navegacao'>
       <ul>
         <li>
           <Link href="alimentacao/homeAlimentacao">Alimentações</Link>

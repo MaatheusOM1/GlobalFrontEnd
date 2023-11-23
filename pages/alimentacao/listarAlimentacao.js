@@ -25,18 +25,32 @@ export default function ListarAlimentos() {
     obterAlimentos();
   }, []);
 
+  const formatarData = (timestamp) => {
+    const data = new Date(timestamp);
+    const dia = String(data.getDate()).padStart(2, '0');
+    const mes = String(data.getMonth() + 1).padStart(2, '0');
+    const ano = data.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+  };
+
   return (
     <div>
       <h1>Listar Alimentos</h1>
       <ul>
         {alimentos.map((alimento) => (
           <li key={alimento.idAlimentacao}>
-            {`ID: ${alimento.idAlimentacao}, Descrição: ${alimento.descricaoRefeicao}, Calorias: ${alimento.calorias}`}
+            {`ID: ${alimento.idAlimentacao}, Descrição: ${alimento.descricaoRefeicao}, Calorias: ${alimento.calorias}, Data: ${formatarData(
+              alimento.dataRefeicao
+            )}`}
           </li>
         ))}
       </ul>
       <br />
-      <li className={styles.button}><Link href="homeAlimentacao" className={styles.a}>Voltar</Link></li>
+      <li className={styles.button}>
+        <Link href="homeAlimentacao" className={styles.a}>
+          Voltar
+        </Link>
+      </li>
     </div>
   );
 }

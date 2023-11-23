@@ -10,25 +10,25 @@ const NavBar = () => {
           <Link href="alimentacao/homeAlimentacao">Alimentações</Link>
         </li>
         <li>
-          <Link href="consulta/homeConsulta">Consultas</Link>
+        <Link href="exercicio/homeExercicio">Exercícios</Link>
         </li>
         <li>
-          <Link href="doencaTransmissivel/homeDoencaTransmissivel">Doenças Transmissíveis</Link>
+        <Link href="problemaSaude/homeProblemaSaude">Problemas de Saúde</Link>
         </li>
         <li>
-          <Link href="exercicio/homeExercicio">Exercícios</Link>
+        <Link href="crianca/homeCrianca">Filhos</Link>
         </li>
         <li>
-          <Link href="crianca/homeCrianca">Filhos</Link>
+        <Link href="cadastroMedico">Médicos</Link>
         </li>
         <li>
-          <Link href="problemaSaude/homeProblemaSaude">Problemas de Saúde</Link>
+        <Link href="doencaTransmissivel/homeDoencaTransmissivel">Doenças Transmissíveis</Link>
         </li>
         <li>
           <Link href="vacina/homeVacina">Vacinas</Link>
         </li>
         <li>
-          <Link href="cadastroMedico">Médicos</Link>
+        <Link href="consulta/homeConsulta">Consultas</Link>
         </li>
       </ul>
     </nav>

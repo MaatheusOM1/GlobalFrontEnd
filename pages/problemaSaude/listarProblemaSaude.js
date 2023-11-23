@@ -25,7 +25,7 @@ export default function ListarProblemas() {
       <ul>
         {problemas.map((problema) => (
           <li key={problema.idProblema}>
-            {`ID: ${problema.idProblema}, Nome Problema: ${problema.nomeProblema}, Data Exercicio: ${problema.descricao}`}
+            {`ID: ${problema.idProblema}, Nome Problema: ${problema.nomeProblema}, Descrição: ${problema.descricao}`}
           </li>
         ))}
       </ul>

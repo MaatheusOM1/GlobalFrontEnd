@@ -25,18 +25,32 @@ export default function ListarConsultas() {
     obterConsultas();
   }, []);
 
+  const formatarData = (timestamp) => {
+    const data = new Date(timestamp);
+    const dia = String(data.getDate()).padStart(2, '0');
+    const mes = String(data.getMonth() + 1).padStart(2, '0');
+    const ano = data.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+  };
+
   return (
     <div>
       <h1>Listar Consultas</h1>
       <ul>
         {consultas.map((consulta) => (
           <li key={consulta.idConsulta}>
-            {`ID: ${consulta.idConsulta}, ID Paciente: ${consulta.idPaciente}, ID Médico: ${consulta.idMedico}, Data Consulta: ${consulta.dataConsulta}, Tipo Consulta: ${consulta.tipoConsulta}, Observações: ${consulta.observacoes}`}
+            {`ID: ${consulta.idConsulta}, ID Paciente: ${consulta.idPaciente}, ID Médico: ${consulta.idMedico}, Data Consulta: ${formatarData(
+              consulta.dataConsulta
+            )}, Tipo Consulta: ${consulta.tipoConsulta}, Observações: ${consulta.observacoes}`}
           </li>
         ))}
       </ul>
       <br />
-      <li className={styles.button}><Link href="homeConsulta" className={styles.a}>Voltar</Link></li>
+      <li className={styles.button}>
+        <Link href="homeConsulta" className={styles.a}>
+          Voltar
+        </Link>
+      </li>
     </div>
   );
 }

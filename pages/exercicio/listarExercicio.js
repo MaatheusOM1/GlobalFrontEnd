@@ -19,18 +19,32 @@ export default function ListarExercicios() {
     fetchExercicios();
   }, []);
 
+  const formatarData = (timestamp) => {
+    const data = new Date(timestamp);
+    const dia = String(data.getDate()).padStart(2, '0');
+    const mes = String(data.getMonth() + 1).padStart(2, '0');
+    const ano = data.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+  };
+
   return (
     <div>
       <h1>Listar Exercicios</h1>
       <ul>
         {exercicios.map((exercicio) => (
           <li key={exercicio.idExercicio}>
-            {`ID: ${exercicio.idExercicio}, ID Paciente: ${exercicio.idPaciente}, Data Exercicio: ${exercicio.dataExercicio}, Tipo Exercicio: ${exercicio.tipoExercicio}, Duração em minutos: ${exercicio.duracaoEmMinutos}`}
+            {`ID: ${exercicio.idExercicio}, ID Paciente: ${exercicio.idPaciente}, Data Exercicio: ${formatarData(
+              exercicio.dataExercicio
+            )}, Tipo Exercicio: ${exercicio.tipoExercicio}, Duração em minutos: ${exercicio.duracaoEmMinutos}`}
           </li>
         ))}
       </ul>
       <br />
-      <li className={styles.button}><Link href="homeExercicio" className={styles.a}>Voltar</Link></li>
+      <li className={styles.button}>
+        <Link href="homeExercicio" className={styles.a}>
+          Voltar
+        </Link>
+      </li>
     </div>
   );
 }
